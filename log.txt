@@ -1,0 +1,4 @@
+22:49:06 Message: rock.log
+22:49:06 Message: This is a test of the Log manager
+22:49:06 Message: This is a test of the Log manager multiple args. int: 64
+22:49:07 Message: Tests compleated!
