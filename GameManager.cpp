@@ -79,10 +79,16 @@ void GameManager::run(){
 		clock->delta();
 
 
+
+
 		//dummy game over for testing
 		if (runs == 30){
 			game_over = true;
 		}
+
+		//Provide step event to all Objects
+		EventStep s;
+		onEvent(&s);
 
 
 		//draw current scene to back buffer

@@ -61,3 +61,4 @@ void Object::setPosition(Position new_pos){
 Position Object::getPosition() const{
 	return pos;
 }
+

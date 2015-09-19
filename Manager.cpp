@@ -32,3 +32,21 @@ void df::Manager::shutDown(){
 	is_started = false;
 
 }
+
+/*
+Send an event to all objects
+returns how many objects recieved the event
+*/
+int df::Manager::onEvent(const Event *p_event) const{
+	int count = 0;
+		
+	df::WorldManager &world_manager = df::WorldManager::getInstance();
+	ObjectList *all_objects = world_manager.getAllobjects();
+	ObjectListIterator li = df::ObjectListIterator(all_objects);
+	while (!li.isDone()){
+		li.currentObject()->eventHandler(p_event);
+		li.next();
+		count++;
+	}
+	return count;
+}

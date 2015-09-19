@@ -11,6 +11,8 @@ Author: August Beers
 #include <string>
 
 //project includes
+#include "Event.h"
+#include "WorldManager.h"
 
 
 namespace df {
@@ -42,6 +44,9 @@ namespace df {
 
 		//Check to see if a manager has started
 		bool isStarted() const;
+
+		//Send an event to all objects
+		int onEvent(const Event *p_event) const;
 
 	};
 

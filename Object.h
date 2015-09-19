@@ -10,6 +10,7 @@ header file which defines the game object class
 
 //Engine includes
 #include "Position.h"
+#include "Event.h"
 
 namespace df{
 
@@ -45,6 +46,8 @@ namespace df{
 		//Get position of object
 		Position getPosition() const;
 
+		//Generic Event Handler
+		virtual int eventHandler(const df::Event *p_e);
 	};
 
 

@@ -12,7 +12,7 @@ const std::string STEP_EVENT = "df::step";
 
 namespace df{
 
-	class EventStep : Event {
+	class EventStep : public df::Event {
 
 	private:
 		int step_count; //Iteration number of game loop
