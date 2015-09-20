@@ -115,3 +115,20 @@ Returns a pointer to the object list
 ObjectList *WorldManager::getAllobjects(void) const{
 	return updates;
 }
+
+/*
+ask all objects to draw themselvs
+*/
+void WorldManager::draw(){
+	ObjectListIterator li = ObjectListIterator(updates);
+	//for loop that enforeces drawing by alttitude
+	for (int alt = 0; alt < MAX_ALTTITUDE; alt++){
+		while (!li.isDone()){
+			if (li.currentObject()->getAltitude() == alt){
+				li.currentObject()->draw();
+				li.next();
+			}
+		}
+		li.first();
+	}
+}

@@ -23,6 +23,7 @@ Author: August Beers
 #include "WorldManager.h"
 #include "EventStep.h"
 #include "Event.h"
+#include "GraphicsManager.h"
 
 //Default frame time(game loop time)
 const int FRAME_TIME_DEFAULT = 33;

@@ -3,6 +3,7 @@ File which defines the methods of the object class
 */
 
 #include "Object.h"
+#include "WorldManager.h"
 
 using namespace df;
 
@@ -62,3 +63,28 @@ Position Object::getPosition() const{
 	return pos;
 }
 
+//Generic Event Handler
+int Object::eventHandler(const df::Event *p_e){
+	return -1;
+}
+
+//To be overided by each object, objects should be able to draw themselvs
+void Object::draw(){
+	
+}
+
+//set altitude, any value greater than MAX_Altitude is regected
+int Object::setAltitude(int new_altitude){
+	if (new_altitude < MAX_ALTTITUDE){
+		altitude = new_altitude;
+		return 0;
+	}
+	else{
+		return -1;
+	}
+}
+
+//Return object altitude
+int Object::getAltitude() const{
+	return altitude;
+}

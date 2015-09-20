@@ -11,7 +11,11 @@ Header file which defines the world manager, a singleton class
 
 namespace df{
 
-	class WorldManager : public Manager {
+	const int MAX_ALTTITUDE = 6;
+
+	class Manager;
+
+	class WorldManager : public df::Manager {
 
 	private:
 		//Singleton behaivior
@@ -54,6 +58,10 @@ namespace df{
 
 		//Indicate Object is to be deleted at the end of current game loop
 		int markforDelete(Object *p_o);
+
+		//ask all objects to draw themselvs
+		void draw();
+
 	};
 
 }//edn df

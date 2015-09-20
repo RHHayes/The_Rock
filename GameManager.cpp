@@ -46,6 +46,10 @@ void GameManager::startUp(){
 	df::WorldManager &world_manager = df::WorldManager::getInstance();
 	world_manager.startUp();
 
+	//start up graphics manager
+	df::GraphicsManager &graphics_manager = df::GraphicsManager::getInstance();
+	graphics_manager.startUp();
+
 	game_over = false;
 
 	Manager::startUp();
@@ -62,6 +66,10 @@ void GameManager::shutDown(){
 	df::LogManager &log_manager = df::LogManager::getInstance();
 	log_manager.shutDown();
 	
+	//Shut down graphics manager
+	df::GraphicsManager &graphics_manager = df::GraphicsManager::getInstance();
+	graphics_manager.shutDown();
+
 	Manager::shutDown();
 
 	timeEndPeriod(1); //Restore default time granularity
@@ -72,24 +80,27 @@ Method which runs the game loop
 */
 void GameManager::run(){
 	df::LogManager &log_manager = df::LogManager::getInstance();
+	df::WorldManager &world_manager = df::WorldManager::getInstance();
+	df::GraphicsManager &graphics_manager = df::GraphicsManager::getInstance();
+
 	df::Clock* clock = new df::Clock;
 	long int loop_time;
 	int runs = 0;
 	while(!game_over) {
 		clock->delta();
+		//get input
 
-
-
+		//Provide step event to all Objects - move this into update
+		EventStep s;
+		onEvent(&s);
+		world_manager.update();
+		world_manager.draw();
+		graphics_manager.swapBuffers();
 
 		//dummy game over for testing
 		if (runs == 30){
 			game_over = true;
 		}
-
-		//Provide step event to all Objects
-		EventStep s;
-		onEvent(&s);
-
 
 		//draw current scene to back buffer
 		//swap back buffer to current buffer

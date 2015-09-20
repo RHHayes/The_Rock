@@ -12,10 +12,10 @@ Author: August Beers
 
 //project includes
 #include "Event.h"
-#include "WorldManager.h"
-
 
 namespace df {
+
+	class WorldManager;
 
 	class Manager {
 

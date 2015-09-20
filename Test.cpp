@@ -13,6 +13,8 @@ File which tests the dragonfly egg development checkpoint
 #include "ObjectListIterator.h" 
 #include "Utility.h"
 #include "Clock.h"
+#include "GraphicsManager.h"
+#include "Position.h"
 
 /*
 Method which runs various tests
@@ -23,9 +25,16 @@ int test(){
 	df::GameManager &game_manager = df::GameManager::getInstance();
 	game_manager.startUp();
 
+
 	df::LogManager &log_manager = df::LogManager::getInstance();
+	log_manager.setFlush(true);
+	
 	
 
+
+
+	testResult = testGraphicsManager();
+	/*
 	//Tests
 	testResult = testObjectListIterator();
 	if(!testResult) testResult = testLogManager();
@@ -33,6 +42,8 @@ int test(){
 	if (!testResult) testResult = testClock();
 	if (!testResult) testResult = testGamManager();
 	
+	*/
+
 	//print result of testing
 	if (!!testResult){
 		log_manager.WriteMessage("Tests failed!");
@@ -40,6 +51,8 @@ int test(){
 	else{
 		log_manager.WriteMessage("Tests compleated!");
 	}
+
+	
 
 	//Shut down testing environment
 	game_manager.shutDown();
@@ -49,6 +62,29 @@ int test(){
 	return 0;
 
 }
+
+
+
+/*
+Method to test the graphics manager
+*/
+int testGraphicsManager(){
+	df::GraphicsManager &graphics_manager = df::GraphicsManager::getInstance();
+
+	df::Position *pos = new df::Position(10, 10);
+	graphics_manager.drawCh(*pos, 'X', df::GREEN);
+	graphics_manager.swapBuffers();
+
+	Sleep(1000);
+
+	graphics_manager.drawString(*pos, "Hey there", df::CENTER_JUSTIFIED, df::YELLOW);
+	graphics_manager.swapBuffers();
+
+	Sleep(2000);
+
+	return 0;
+}
+
 
 
 /*

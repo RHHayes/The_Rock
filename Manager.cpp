@@ -3,6 +3,8 @@ File which define methods of the Manger abstract class
 */
 
 #include "Manager.h"
+#include "WorldManager.h"
+
 using namespace df;
 //Set type identifier of Manger.
 void df::Manager::setType(std::string type){
@@ -34,6 +36,7 @@ void df::Manager::shutDown(){
 }
 
 /*
+
 Send an event to all objects
 returns how many objects recieved the event
 */

@@ -64,6 +64,8 @@ void df::LogManager::WriteMessage(const char *fmt, ...){
 		vfprintf(log, fmt, args);
 		va_end(args);
 		fprintf(log, "\n");
+		fflush(log);
+	
 	}
 
 }
@@ -75,9 +77,8 @@ Method which starts up a LogManager
 int df::LogManager::startUp(){
 	log = fopen("log.txt", "w");
 	WriteMessage("rock.log");
-	if (do_flush){
-		fflush(log);
-	}
+	fflush(log);
+	
 	df::Manager::startUp();
 	return 0;
 }
@@ -85,6 +86,7 @@ int df::LogManager::startUp(){
 //Shutdown Manager.
 void df::LogManager::shutDown(){
 	fclose(log);
+	Manager::shutDown();
 }
 
 
@@ -93,4 +95,11 @@ df::LogManager &df::LogManager::getInstance(){
 	static df::LogManager single;
 	return single;
 
+}
+
+/*
+set flush of text
+*/
+void df::LogManager::setFlush(bool do_flush){
+	do_flush = true;
 }
