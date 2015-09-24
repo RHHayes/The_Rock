@@ -8,6 +8,7 @@ Header file which defines the world manager, a singleton class
 //Engine includes
 #include "Manager.h"
 #include "ObjectList.h"
+#include "EventStep.h"
 
 namespace df{
 

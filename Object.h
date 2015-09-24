@@ -11,8 +11,16 @@ header file which defines the game object class
 //Engine includes
 #include "Position.h"
 #include "Event.h"
+#include "math.h"
 
 namespace df{
+
+	enum Solidness {
+		HARD, // Objects cause collisions and impede.
+		SOFT, // Objects cause collisions, but don't impede
+		SPECTRAL // Objects don't cause collisions.
+	};
+
 
 	class Object{
 
@@ -21,6 +29,15 @@ namespace df{
 		std::string type; //string type representation
 		Position pos; //Object position in game world
 		int altitude; //0 to max
+
+
+		Solidness solidness; // Solidness of object
+
+		//Variables relating to object movement
+		float x_velocity;
+		float x_velocity_countdown;
+		float y_velocity;
+		float y_velocity_countdown;
 
 	public:
 		//Construct Object and add to the game world
@@ -60,6 +77,23 @@ namespace df{
 
 		//Return object altitude
 		int getAltitude() const;
+
+		//velocity getters and setters
+		void setXVelocity(float new_x_velocity);
+		float getXVelocity() const;
+		void setYVelocity(float new_y_velocity);
+		float getYVelocity() const;
+		int getXVelocityStep();
+		int getYVelocityStep();
+
+		//Solidness methods
+
+		// True if HARD or SOFT, else false.
+		bool isSolid(); 
+
+		int setSolidness(Solidness new_solid);
+
+		Solidness getSolidness() const;
 
 	};
 

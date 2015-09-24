@@ -13,6 +13,8 @@ int testWorldManager();
 
 int testClock();
 
-int testGamManager();
+int testGameManager();
 
 int testGraphicsManager();
+
+int testObjectVelocity();

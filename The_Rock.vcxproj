@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClInclude Include="Clock.h" />
     <ClInclude Include="Event.h" />
+    <ClInclude Include="EventKeyboard.h" />
+    <ClInclude Include="EventMouse.h" />
     <ClInclude Include="EventStep.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GraphicsManager.h" />
@@ -38,6 +40,8 @@
   <ItemGroup>
     <ClCompile Include="Clock.cpp" />
     <ClCompile Include="Event.cpp" />
+    <ClCompile Include="EventKeyboard.cpp" />
+    <ClCompile Include="EventMouse.cpp" />
     <ClCompile Include="EventStep.cpp" />
     <ClCompile Include="GraphicsManager.cpp" />
     <ClCompile Include="InputManger.cpp" />

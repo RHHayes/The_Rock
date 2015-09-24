@@ -88,3 +88,67 @@ int Object::setAltitude(int new_altitude){
 int Object::getAltitude() const{
 	return altitude;
 }
+
+void Object::setXVelocity(float new_x_velocity){
+	x_velocity = new_x_velocity;
+	x_velocity_countdown = 1;
+
+}
+
+float Object::getXVelocity() const{
+	return x_velocity;
+}
+
+void Object::setYVelocity(float new_y_velocity){
+	y_velocity = new_y_velocity;
+	y_velocity_countdown = 1;
+}
+
+float Object::getYVelocity() const{
+	return y_velocity;
+}
+
+int Object::getXVelocityStep(){
+	if (x_velocity == 0){
+		return 0;
+	}
+
+	x_velocity_countdown = x_velocity_countdown - fabs(x_velocity);
+	if (x_velocity_countdown > 0){
+		return 0;
+	}
+
+	//Time to move
+	int spaces = floor(1 - x_velocity_countdown);
+	x_velocity_countdown = 1 + fmod(x_velocity_countdown, 1);
+
+	//Return number of spaces to move
+	if (x_velocity > 0){
+		return spaces;
+	}
+	else
+		return -1 * spaces;
+
+}
+
+int Object::getYVelocityStep(){
+	if (y_velocity == 0){
+		return 0;
+	}
+
+	y_velocity_countdown = y_velocity_countdown - fabs(y_velocity);
+	if (y_velocity_countdown > 0){
+		return 0;
+	}
+
+	//Time to move
+	int spaces = floor(1 - y_velocity_countdown);
+	y_velocity_countdown = 1 + fmod(y_velocity_countdown, 1);
+
+	//Return number of spaces to move
+	if (y_velocity > 0){
+		return spaces;
+	}
+	else
+		return -1 * spaces;
+}

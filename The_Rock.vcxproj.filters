@@ -87,6 +87,12 @@
     <ClInclude Include="InputManager.h">
       <Filter>Header Files\Mangers</Filter>
     </ClInclude>
+    <ClInclude Include="EventKeyboard.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventMouse.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Test.cpp">
@@ -136,6 +142,12 @@
     </ClCompile>
     <ClCompile Include="InputManger.cpp">
       <Filter>Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="EventKeyboard.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventMouse.cpp">
+      <Filter>Source Files\Events</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

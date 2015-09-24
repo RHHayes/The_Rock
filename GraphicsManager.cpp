@@ -44,7 +44,7 @@ int GraphicsManager::startUp(){
 
 	p_window =
 		new sf::RenderWindow(sf::VideoMode(window_horizontal_pixels, window_vertical_pixels),
-		"Tittle - The Rock", WINDOW_STYLE_DEFAULT);
+		"Tittle - The Rock", WINDOW_STYLE_DEFAULTa | WINDOW_STYLE_DEFAULTb);
 
 	if (p_window == NULL){
 	log_manager.WriteMessage("Error! failed to initialize render window, graphics start up failed");
@@ -74,13 +74,9 @@ int GraphicsManager::startUp(){
 
 //this is broke
 int GraphicsManager::shutDown(){
-	/*
-	if (p_window ){
-		p_window->close();
-	}
 	
-	delete p_window;
-	*/
+	p_window->close();
+	
 	Manager::shutDown();
 	return 0;
 
@@ -101,7 +97,7 @@ int GraphicsManager::drawCh(Position pos, char ch, Color color) const{
 		return -1;
 	}
 	
-	log_manager.WriteMessage("%d", window_vetical_chars);
+	
 
 	//Convert spaces to pixes
 	Position pixel_pos = graphics_manager.spacesToPixels(pos);
@@ -158,8 +154,6 @@ int GraphicsManager::drawCh(Position pos, char ch, Color color) const{
 		break;
 	}
 	
-	log_manager.WriteMessage("%f : %f", pixel_pos.getX(), pixel_pos.getY());
-	log_manager.WriteMessage("%d : %d", pixel_pos.getX(), pixel_pos.getY());
 	text.setPosition(pixel_pos.getX(), pixel_pos.getY());
 
 	p_window->draw(text);
@@ -240,7 +234,7 @@ int GraphicsManager::getVerticalPixels() const{
 	return window_vertical_pixels;
 }
 
-sf::RenderWindow *GraphicsManager::getWIndow() const{
+sf::RenderWindow *GraphicsManager::getWindow() const{
 	return p_window;
 }
 
@@ -252,8 +246,7 @@ Helper functions
 
 //Method which calculates the heirght of a char
 float GraphicsManager::charHeight(){
-	LogManager &log_manager = LogManager::getInstance();
-	log_manager.WriteMessage("%d", window_vetical_chars);
+
 	return (float)(GraphicsManager::getVerticalPixels() / GraphicsManager::getVertical());
 }
 
@@ -264,8 +257,7 @@ float GraphicsManager::charWidth(){
 
 //Converts ADC11 spaces to window pixels
 Position GraphicsManager::spacesToPixels(Position spaces){
-	LogManager &log_manager = LogManager::getInstance();
-	log_manager.WriteMessage("%d", window_vetical_chars);
+
 	return Position(spaces.getX() * charWidth(), spaces.getY() * charHeight());
 }
 

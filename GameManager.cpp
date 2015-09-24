@@ -82,32 +82,28 @@ void GameManager::run(){
 	df::LogManager &log_manager = df::LogManager::getInstance();
 	df::WorldManager &world_manager = df::WorldManager::getInstance();
 	df::GraphicsManager &graphics_manager = df::GraphicsManager::getInstance();
-
+	df::InputManger &input_manager = df::InputManger::getInstance();
 	df::Clock* clock = new df::Clock;
+
 	long int loop_time;
-	int runs = 0;
+	
 	while(!game_over) {
 		clock->delta();
-		//get input
-
-		//Provide step event to all Objects - move this into update
-		EventStep s;
-		onEvent(&s);
-		world_manager.update();
+		//poll sfml for input
+		input_manager.getInput();
+		//update objects in the world based on input and step event
+		world_manager.update(); 
+		//draw current scene to back buffer'
 		world_manager.draw();
+		//swap back buffer to current buffer
 		graphics_manager.swapBuffers();
 
-		//dummy game over for testing
-		if (runs == 30){
-			game_over = true;
+		//frame rate control
+   		loop_time = clock->split();
+		if (frame_time - loop_time >= 0){
+			Sleep(frame_time - loop_time);
 		}
 
-		//draw current scene to back buffer
-		//swap back buffer to current buffer
-		loop_time = clock->split();
-		Sleep(frame_time - loop_time);
-		runs++;
-	
 		
 	}
 	

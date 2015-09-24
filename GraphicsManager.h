@@ -35,7 +35,8 @@ namespace df{
 	const int WINDOW_VERTICAL_PIXELS_DEFAULT = 768;
 	const int WINDOW_HORIZONTAL_CHARS_DEFAULT = 80;
 	const int WINDOW_VERTICAL_CHARS_DEFAULT = 24;
-	const int WINDOW_STYLE_DEFAULT = sf::Style::Titlebar;
+	const int WINDOW_STYLE_DEFAULTa = sf::Style::Titlebar;
+	const int WINDOW_STYLE_DEFAULTb = sf::Style::Close;
 	const sf::Color WINDOW_BACKGROUND_COLOR_DEFAULT = sf::Color::Black;
 	const std::string WINDOW_TITLE_DEFAULT = "Dragonfly";
 	const std::string FONT_FILE_DEFAULT = "df-font.ttf";
@@ -90,7 +91,7 @@ namespace df{
 
 		int getVerticalPixels() const;
 
-		sf::RenderWindow *getWIndow() const;
+		sf::RenderWindow *getWindow() const;
 
 		//Helper functions
 		float charHeight();

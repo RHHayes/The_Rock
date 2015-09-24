@@ -4,6 +4,7 @@ File which defines the methods og the world manager class
 
 
 #include "WorldManager.h"
+#include "LogManager.h"
 
 using namespace df;
 
@@ -94,12 +95,35 @@ int WorldManager::removeObject(df::Object *p_o){
 Method which deletes all object marked for deletion
 */
 void WorldManager:: update(){
+	//Provide step event to all Objects - move this into update
+	EventStep s;
+	onEvent(&s);
+
+
+	//delete the objects in the deletion list
 	ObjectList *p_dl = deletions;
 	df::ObjectListIterator *ld = new df::ObjectListIterator(p_dl);
 	for (ld->first(); !ld->isDone(); ld->next()){
 		updates->remove(ld->currentObject());
 	}
 	deletions->clear();
+
+	//udpade object positions based on their velocities
+	int x = -1, y = -1; // poetntial new postition of object
+	df::ObjectListIterator *lu = new df::ObjectListIterator(updates);
+	while (!lu->isDone()){
+		x = lu->currentObject()->getXVelocityStep();
+		y = lu->currentObject()->getYVelocityStep();
+
+		if (x || y){
+			Position old_position = lu->currentObject()->getPosition();
+			Position new_position = Position(old_position.getX() + x,
+				old_position.getY() + y);
+			lu->currentObject()->setPosition(new_position);
+		}
+		lu->next();
+	}//end while
+
 }
 
 /*
@@ -120,15 +144,16 @@ ObjectList *WorldManager::getAllobjects(void) const{
 ask all objects to draw themselvs
 */
 void WorldManager::draw(){
-	ObjectListIterator li = ObjectListIterator(updates);
+
+	ObjectListIterator *li = new ObjectListIterator(updates);
 	//for loop that enforeces drawing by alttitude
 	for (int alt = 0; alt < MAX_ALTTITUDE; alt++){
-		while (!li.isDone()){
-			if (li.currentObject()->getAltitude() == alt){
-				li.currentObject()->draw();
-				li.next();
+		while (!li->isDone()){	
+			if (li->currentObject()->getAltitude() == alt){
+				li->currentObject()->draw();
 			}
+			li->next();
 		}
-		li.first();
+		li->first();
 	}
 }
