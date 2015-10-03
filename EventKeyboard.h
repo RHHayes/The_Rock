@@ -11,7 +11,7 @@ Header file which define a keyboard event
 
 namespace df{
 
-		const std::string _KEYBOARD_VENT = "df::keyboard";
+		const std::string _KEYBOARD_EVENT = "df::keyboard";
 
 		enum EventKeyboardAction {
 			UNDEFINED_KEYBOARD_ACTION = -1,

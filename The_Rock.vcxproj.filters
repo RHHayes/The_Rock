@@ -40,6 +40,9 @@
     <Filter Include="Header Files\Utility">
       <UniqueIdentifier>{ec34be40-6cb2-4dfb-906f-fe4c60cc2520}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Saucer_Shoot">
+      <UniqueIdentifier>{c7ef2e02-85e7-4def-8bcf-39601946d9e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -92,6 +95,39 @@
     </ClInclude>
     <ClInclude Include="EventMouse.h">
       <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventCollision.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="EventOut.h">
+      <Filter>Header Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject.h">
+      <Filter>Source Files\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="EventNuke.h">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion.h">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClInclude>
+    <ClInclude Include="Reticle.h">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClInclude>
+    <ClInclude Include="Saucer.h">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClInclude>
+    <ClInclude Include="Star.h">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Source Files\Saucer_Shoot</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +184,42 @@
     </ClCompile>
     <ClCompile Include="EventMouse.cpp">
       <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventCollision.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="EventOut.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="EventNuke.cpp">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion.cpp">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver.cpp">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="Reticle.cpp">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="Saucer.cpp">
+      <Filter>Source Files\Saucer_Shoot</Filter>
+    </ClCompile>
+    <ClCompile Include="Star.cpp">
+      <Filter>Source Files\Saucer_Shoot</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

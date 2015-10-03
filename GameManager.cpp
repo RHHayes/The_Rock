@@ -35,25 +35,27 @@ GameManager &GameManager::getInstance(){
 /*
 Start up all the managers required to run the game
 */
-void GameManager::startUp(){
+int GameManager::startUp(){
+	int startUp;
 	timeBeginPeriod(1);//Set granuality of time system call
 
 	//Start up log manager
 	df::LogManager &log_manager = df::LogManager::getInstance();
-	log_manager.startUp();
+	startUp = log_manager.startUp();
 
 	//Start up world manager
 	df::WorldManager &world_manager = df::WorldManager::getInstance();
-	world_manager.startUp();
+	startUp = world_manager.startUp();
 
 	//start up graphics manager
 	df::GraphicsManager &graphics_manager = df::GraphicsManager::getInstance();
-	graphics_manager.startUp();
+	startUp = graphics_manager.startUp();
 
 	game_over = false;
 
 	Manager::startUp();
 
+	return startUp;
 }
 
 		//Shut GameManager services
@@ -82,7 +84,7 @@ void GameManager::run(){
 	df::LogManager &log_manager = df::LogManager::getInstance();
 	df::WorldManager &world_manager = df::WorldManager::getInstance();
 	df::GraphicsManager &graphics_manager = df::GraphicsManager::getInstance();
-	df::InputManger &input_manager = df::InputManger::getInstance();
+	df::InputManager &input_manager = df::InputManager::getInstance();
 	df::Clock* clock = new df::Clock;
 
 	long int loop_time;

@@ -4,10 +4,12 @@ File which defines the methods of the object class
 
 #include "Object.h"
 #include "WorldManager.h"
+#include "LogManager.h"
 
 using namespace df;
 
 Object::Object(){
+	
 	static int id_counter = 0;
 	id = id_counter;
 	id_counter++;
@@ -17,6 +19,18 @@ Object::Object(){
 
 	//object position is inititaill the top left corner of the screen
 	pos = Position();
+	//initialize velopcity to 0;
+	x_velocity = 0;
+	x_velocity_countdown = 0;
+	y_velocity = 0;
+	y_velocity_countdown = 0;
+
+	altitude = 0;
+
+	solidness = df::HARD;
+
+	WorldManager &world_manager = WorldManager::getInstance();
+	world_manager.insertObject(this);
 
 }
 
@@ -65,13 +79,21 @@ Position Object::getPosition() const{
 
 //Generic Event Handler
 int Object::eventHandler(const df::Event *p_e){
-	return -1;
+
+	LogManager &log_manager = LogManager::getInstance();
+	log_manager.WriteMessage(p_e->getType().c_str());
+	if (p_e->getType() == df::COLLISION_EVENT){
+		const df::EventCollision *p_collision_event =
+			static_cast <const df::EventCollision *> (p_e);
+		if (p_collision_event->getObject()->getId() == id){
+			x_velocity = -1 * x_velocity;
+			y_velocity = -1 * y_velocity;
+		}
+		return 0;
+	}
+	return 0;
 }
 
-//To be overided by each object, objects should be able to draw themselvs
-void Object::draw(){
-	
-}
 
 //set altitude, any value greater than MAX_Altitude is regected
 int Object::setAltitude(int new_altitude){
@@ -108,6 +130,7 @@ float Object::getYVelocity() const{
 	return y_velocity;
 }
 
+//Method which advances the velocity counter and then detrmines if an object should move this frame
 int Object::getXVelocityStep(){
 	if (x_velocity == 0){
 		return 0;
@@ -119,8 +142,8 @@ int Object::getXVelocityStep(){
 	}
 
 	//Time to move
-	int spaces = floor(1 - x_velocity_countdown);
-	x_velocity_countdown = 1 + fmod(x_velocity_countdown, 1);
+	int spaces = (int)floor(1 - x_velocity_countdown);
+	x_velocity_countdown = (float)(1 + fmod((int)x_velocity_countdown, 1));
 
 	//Return number of spaces to move
 	if (x_velocity > 0){
@@ -131,6 +154,7 @@ int Object::getXVelocityStep(){
 
 }
 
+//y component of Velocity step
 int Object::getYVelocityStep(){
 	if (y_velocity == 0){
 		return 0;
@@ -142,8 +166,8 @@ int Object::getYVelocityStep(){
 	}
 
 	//Time to move
-	int spaces = floor(1 - y_velocity_countdown);
-	y_velocity_countdown = 1 + fmod(y_velocity_countdown, 1);
+	int spaces = (int)floor(1 - y_velocity_countdown);
+	y_velocity_countdown = (float)(1 + fmod(y_velocity_countdown, 1));
 
 	//Return number of spaces to move
 	if (y_velocity > 0){
@@ -152,3 +176,31 @@ int Object::getYVelocityStep(){
 	else
 		return -1 * spaces;
 }
+
+bool Object::isSolid(){
+	if (solidness == HARD || solidness == SOFT){
+		return true;
+	}
+	else
+		return false;
+}
+
+int Object::setSolidness(Solidness new_solid){
+	if (new_solid == HARD || new_solid == SOFT || new_solid == SPECTRAL){
+		solidness = new_solid;
+		return 0;
+	}
+	else{
+		return -1;
+	}
+}
+
+Solidness Object::getSolidness() const{
+	return solidness;
+}
+
+void Object::draw(){
+	GraphicsManager &graphics_manager = GraphicsManager::getInstance();
+	graphics_manager.drawCh(pos, 'X' , df::GREEN);
+}
+

@@ -7,8 +7,13 @@ Header file which defines the world manager, a singleton class
 
 //Engine includes
 #include "Manager.h"
+#include "GraphicsManager.h"
 #include "ObjectList.h"
 #include "EventStep.h"
+#include "Utility.h"
+#include "EventCollision.h"
+#include "EventOut.h"
+#include "ObjectListIterator.h"
 
 namespace df{
 
@@ -25,9 +30,9 @@ namespace df{
 		void operator=(WorldManager const&);
 
 		//All objects in world to update
-		ObjectList *updates;
+		ObjectList updates;
 		//All objects in the world to delete
-		ObjectList *deletions;
+		ObjectList deletions;
 
 	public:
 		//Get the instance of the world manager
@@ -51,7 +56,7 @@ namespace df{
 		int removeObject(Object *p_o);
 
 		//Return a list of objects in world
-		ObjectList *getAllobjects(void) const;
+		ObjectList getAllobjects(void) const;
 
 		//update world
 		//delete all objects marked for deletion
@@ -62,6 +67,15 @@ namespace df{
 
 		//ask all objects to draw themselvs
 		void draw();
+
+		//Returns list of Objects collided with at Position 'where'
+		//Collusuibs onyl happen to solid objects
+		//Does not consider if p_o is solid or not
+		ObjectList isCollision(Object *p_o, Position where) const;
+
+		//Move object, atempts to move object. if no collision with solid 
+		//object move is ok
+		int moveObject(Object *p_o, Position where);
 
 	};
 

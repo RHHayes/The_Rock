@@ -35,6 +35,7 @@ int InputManager::startUp(){
 	render_window->setKeyRepeatEnabled(false);
 
 	Manager::startUp();
+	return 0;
 }
 
 /*
@@ -69,10 +70,10 @@ void InputManager::getInput(){
 		Key pressed event
 		*/
 		if (event.type == sf::Event::KeyPressed){
-			log_manager.WriteMessage("%d", event.key.code);
-			EventKeyboard *new_event = new EventKeyboard();
+		
+ 			EventKeyboard *new_event = new EventKeyboard();
 			new_event->setKey(convertSFMLkeyValue(event.key.code));
-			new_event->setKeyboardAction(df::KEY_PRESSED);
+			new_event->setKeyboardAction(EventKeyboardAction::KEY_PRESSED);
 			 
 
 			/*Break from game loop if In testing*/
@@ -90,7 +91,7 @@ void InputManager::getInput(){
 		if (event.type == sf::Event::KeyReleased){
 				EventKeyboard *new_event = new EventKeyboard();
 				new_event->setKey(convertSFMLkeyValue(event.key.code));
-				new_event->setKeyboardAction(df::KEY_RELEASED);
+				new_event->setKeyboardAction(EventKeyboardAction::KEY_RELEASED);
 
 				onEvent(new_event);
 			}

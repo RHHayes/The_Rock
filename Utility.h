@@ -8,6 +8,7 @@ Class which contsins utility functions
 //System includes
 #include <stdio.h>
 #include <time.h>
+#include "Position.h"
 
 
 namespace df{
@@ -20,6 +21,11 @@ namespace df{
 
 		//Method which returns a string of the current time
 		char *getTimeString();
+
+
+		//Return true if two positions intersect, else false
+		bool positionsIntersect(Position p1, Position p2);
+
 
 	};
 

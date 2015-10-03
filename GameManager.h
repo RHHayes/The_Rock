@@ -49,7 +49,7 @@ namespace df{
 		static GameManager &getInstance();
 
 		//Start gameManager services
-		void startUp();
+		int startUp();
 
 		//Shut GameManager services
 		void shutDown();

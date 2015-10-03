@@ -25,6 +25,12 @@ void df::ObjectList::clear(){
 Insert an objext pointer into the list
 */
 int df::ObjectList::insert(Object *p_o){
+	for (int i = 0; i < count; i++){
+		if (list[i] == p_o){
+			return 0;
+		}
+	}
+
 	if (count == MAX_OBJECTS){
 		return -1;
 	}

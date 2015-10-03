@@ -8,9 +8,11 @@ Header file which defines the EventStep class
 //engine includes
 #include "Event.h"
 
-const std::string STEP_EVENT = "df::step";
+
 
 namespace df{
+
+	const std::string STEP_EVENT = "df::step";
 
 	class EventStep : public df::Event {
 

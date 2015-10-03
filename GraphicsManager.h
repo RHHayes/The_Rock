@@ -37,7 +37,7 @@ namespace df{
 	const int WINDOW_VERTICAL_CHARS_DEFAULT = 24;
 	const int WINDOW_STYLE_DEFAULTa = sf::Style::Titlebar;
 	const int WINDOW_STYLE_DEFAULTb = sf::Style::Close;
-	const sf::Color WINDOW_BACKGROUND_COLOR_DEFAULT = sf::Color::Black;
+	const sf::Color WINDOW_BACKGROUND_COLOR_DEFAULT = sf::Color::Cyan;
 	const std::string WINDOW_TITLE_DEFAULT = "Dragonfly";
 	const std::string FONT_FILE_DEFAULT = "df-font.ttf";
 

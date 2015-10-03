@@ -47,5 +47,14 @@ char *df::Utility::getTimeString(){
 
 }
 
+bool df::Utility::positionsIntersect(Position p1, Position p2){
+	if ((p1.getX() == p2.getX()) && (p1.getY() == p2.getY())){
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
 

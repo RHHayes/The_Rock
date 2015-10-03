@@ -12,6 +12,8 @@ header file which defines the game object class
 #include "Position.h"
 #include "Event.h"
 #include "math.h"
+#include "GraphicsManager.h"
+
 
 namespace df{
 

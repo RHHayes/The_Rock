@@ -15,6 +15,7 @@ File which tests the dragonfly egg development checkpoint
 #include "Clock.h"
 #include "GraphicsManager.h"
 #include "Position.h"
+#include "TestObject.h"
 
 /*
 Method which runs various tests
@@ -40,9 +41,8 @@ int test(){
 	if(!testResult) testResult = testLogManager();
 	if (!testResult) testResult = testWorldManager();
 	if (!testResult) testResult = testClock();
-	if (!testResult) testResult = testObjectVelocity();
 	if (!testResult) testResult  = testGraphicsManager();
-	if (!testResult) testResult = testGameManager();
+	if (!testResult) testResult = testObjectVelocity();
 	
 	
 	
@@ -68,26 +68,6 @@ int test(){
 
 
 
-/*
-Method to test the graphics manager
-*/
-int testGraphicsManager(){
-	df::GraphicsManager &graphics_manager = df::GraphicsManager::getInstance();
-
-	
-	df::Position *pos = new df::Position(15, 15);
-
-	/*
-	graphics_manager.drawCh(*pos, 'X', df::GREEN);
-	graphics_manager.swapBuffers();
-	*/
-	graphics_manager.drawString(*pos, "Press Space to end Test", df::CENTER_JUSTIFIED, df::YELLOW);
-	graphics_manager.swapBuffers();
-
-
-
-	return 0;
-}
 
 
 /*
@@ -125,6 +105,8 @@ int testObjectListIterator(){
 		ids++;
 	}
 
+	delete iterator;
+	delete aList;
 	return testResult;
 
 }
@@ -152,31 +134,38 @@ int testWorldManager(){
 	df::WorldManager &world_manager = df::WorldManager::getInstance();
 
 	//save this sad object for later, id 3
-	df::Object *sad_object = new df::Object();
+	
 
 	//add dummy opbjects to world manage, the two new objects have id 4 and 5
-	world_manager.insertObject(sad_object);
-	world_manager.insertObject(new df::Object());
-	world_manager.insertObject(new df::Object());
-
-
 	
-	df::ObjectListIterator *iterator = new df::ObjectListIterator(world_manager.getAllobjects());
+	df::Object obj4 = df::Object();
+	obj4.setPosition(df::Position(15, 15));
+	world_manager.insertObject(&obj4);
+	df::Object obj5 = df::Object();
+	obj5.setPosition(df::Position(10, 15));
+	world_manager.insertObject(&obj5);
+
+	df::Object sad_object = df::Object();
+
+	world_manager.insertObject(&sad_object);
+
+	df::ObjectList objects = world_manager.getAllobjects();
+	df::ObjectListIterator iterator = df::ObjectListIterator(&objects);
 
 
 	//Check if objects are contined in the world manager
-	int ids = 3;
-	iterator->first();
-	while (!iterator->isDone()){
-		df::Object *item = iterator->currentObject();
-		if (item->getId() == ids){
+	int ids = 0;
+	iterator.first();
+	while (!iterator.isDone()){
+		df::Object *item = iterator.currentObject();
+		if (item->getId() == ids ){
 			testResult = 0;
 		}
-		else
+		else{
 			testResult = -1;
-		
+		}
 
-		iterator->next();
+		iterator.next();
 		//iterate to next id that should be present
 		ids++;
 	}
@@ -184,19 +173,21 @@ int testWorldManager(){
 	//test mark for delete functionality
 
 	//mark the sad object for delet
-	world_manager.markforDelete(sad_object);
+	world_manager.markforDelete(&sad_object);
 
 	//update game manager
 	world_manager.update();
 
+
 	//construct iterator from updated world managers current objects
-	iterator = new df::ObjectListIterator(world_manager.getAllobjects());
+	objects = world_manager.getAllobjects();
+	iterator = df::ObjectListIterator(&objects);
 
 	//test to eunsure only objects 4 and 5 remain in the world manager
-	ids = 4;
-	iterator->first();
-	while (!iterator->isDone()){
-		df::Object *item = iterator->currentObject();
+	ids = 0;
+	iterator.first();
+	while (!iterator.isDone()){
+		df::Object *item = iterator.currentObject();
 		if (item->getId() == ids){
 			testResult = 0;
 		}
@@ -204,15 +195,68 @@ int testWorldManager(){
 			testResult = -1;
 
 
-		iterator->next();
+		iterator.next();
 		ids++;
 	}
 
-
+	
+	
 	return testResult;
 
 
 }
+
+/*
+Method to test the graphics manager and world manager
+*/
+int testGraphicsManager(){
+	df::GraphicsManager &graphics_manager = df::GraphicsManager::getInstance();
+	df::WorldManager &world_manager = df::WorldManager::getInstance();
+
+
+
+	//6th and 7th objects to be instantiated during testing
+	world_manager.insertObject(new df::Object());
+	world_manager.insertObject(new df::Object());
+	world_manager.insertObject(new df::TestObject());
+	world_manager.insertObject(new df::Object());
+
+	df::ObjectList objects = world_manager.getAllobjects();
+	df::ObjectListIterator iterator = df::ObjectListIterator(&objects);
+
+	int currentID = 0;
+	while (!iterator.isDone()){
+
+		currentID = iterator.currentObject()->getId();
+		if (currentID == 4){
+			iterator.currentObject()->setPosition(df::Position(15, 15));
+		}
+		if (currentID == 5){
+			iterator.currentObject()->setPosition(df::Position(10, 15));
+		}
+		if (currentID == 6){
+			iterator.currentObject()->setPosition(df::Position(15, 10));
+		}
+		if (currentID == 7){
+			iterator.currentObject()->setPosition(df::Position(10, 10));
+		}
+		if (currentID == 8){
+			iterator.currentObject()->setPosition(df::Position(10, 2));
+		}
+		if (currentID == 9){
+			iterator.currentObject()->setPosition(df::Position(15, 12));
+			iterator.currentObject()->setYVelocity(.1);
+		}
+
+
+		iterator.next();
+	}
+
+	
+
+	return 0;
+}
+
 
 
 /*
@@ -238,30 +282,18 @@ int testClock(){
 		testResult = -1;
 	}
 
+	delete clk;
+	
 	return testResult;
 
 }
 
-/*
-Method which test game manager functionality
-*/
-int testGameManager(){
-	int testResult = -1;
-	df::LogManager &log_manager = df::LogManager::getInstance();
-	df::GameManager &game_manager = df::GameManager::getInstance();
 
-	log_manager.WriteMessage("Entering Game Loop");
-	//test the game manger run functionality
-	game_manager.run();
-	log_manager.WriteMessage("Exiting Game Loop");
-	testResult = 0;
-	return testResult;
-
-}
 
 //method which checks object velocity math for x and y;
 int testObjectVelocity(){
 	int testResult = -1;
+	//8th object
 	df::Object *object = new df::Object();
 	object->setXVelocity(.25);
 	object->setYVelocity(.25);
@@ -304,5 +336,6 @@ int testObjectVelocity(){
 		return testResult = -1;
 	}
 	
+	delete object;
 	return testResult;
 }

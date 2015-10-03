@@ -15,7 +15,7 @@ EventKeyboard::EventKeyboard(){
 	//catagory of keyboard event
 	keyboard_action = UNDEFINED_KEYBOARD_ACTION;
 
-	Event::setType(df::_KEYBOARD_VENT);
+	Event::setType(df::_KEYBOARD_EVENT);
 }
 
 //getters and setters
@@ -30,7 +30,7 @@ Keyboard::Key EventKeyboard::getKey() const{
 
 //Get keyboard event action. To be used by the InputManager only!
 void EventKeyboard::setKeyboardAction(EventKeyboardAction new_action){
-	keyboard_action = keyboard_action;
+	keyboard_action = new_action;
 }
 
 //Get keybaord event action

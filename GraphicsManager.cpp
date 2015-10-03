@@ -18,6 +18,7 @@ GraphicsManager::GraphicsManager(){
 	window_horizontal_chars = WINDOW_HORIZONTAL_CHARS_DEFAULT;
 	window_vetical_chars = WINDOW_VERTICAL_CHARS_DEFAULT;
 
+
 }
 
 GraphicsManager::GraphicsManager(GraphicsManager const&){
@@ -117,10 +118,10 @@ int GraphicsManager::drawCh(Position pos, char ch, Color color) const{
 
 	//scale to right size
 	if (graphics_manager.charWidth() < graphics_manager.charHeight()){
-		text.setCharacterSize(graphics_manager.charWidth() * 2);
+		text.setCharacterSize((int)graphics_manager.charWidth() * 2);
 	}
 	else{
-		text.setCharacterSize(graphics_manager.charHeight() * 2);
+		text.setCharacterSize((int)graphics_manager.charHeight() * 2);
 	}
 
 	//Set SFML color based on our colors
@@ -154,7 +155,7 @@ int GraphicsManager::drawCh(Position pos, char ch, Color color) const{
 		break;
 	}
 	
-	text.setPosition(pixel_pos.getX(), pixel_pos.getY());
+	text.setPosition((float)pixel_pos.getX(), (float)pixel_pos.getY());
 
 	p_window->draw(text);
 
@@ -211,7 +212,8 @@ int GraphicsManager::swapBuffers(){
 	p_window->display();
 
 	//clear the old window
-	p_window->clear();
+	p_window->clear(WINDOW_BACKGROUND_COLOR_DEFAULT)
+		;
 
 	return 0;
 }
@@ -258,9 +260,10 @@ float GraphicsManager::charWidth(){
 //Converts ADC11 spaces to window pixels
 Position GraphicsManager::spacesToPixels(Position spaces){
 
-	return Position(spaces.getX() * charWidth(), spaces.getY() * charHeight());
+	return Position(spaces.getX() * (int)charWidth(), spaces.getY() * (int)charHeight());
 }
 
 Position GraphicsManager::pixelsToSpaces(Position pixels){
-	return Position(pixels.getX() / charWidth(), pixels.getY() / charHeight());
+	return Position(pixels.getX() / (int)charWidth(), pixels.getY() / (int)charHeight());
 }
+

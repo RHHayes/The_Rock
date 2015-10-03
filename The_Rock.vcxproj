@@ -19,13 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Clock.h" />
     <ClInclude Include="Event.h" />
+    <ClInclude Include="EventCollision.h" />
     <ClInclude Include="EventKeyboard.h" />
     <ClInclude Include="EventMouse.h" />
+    <ClInclude Include="EventNuke.h" />
+    <ClInclude Include="EventOut.h" />
     <ClInclude Include="EventStep.h" />
+    <ClInclude Include="Explosion.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="GraphicsManager.h" />
+    <ClInclude Include="Hero.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="LogManager.h" />
     <ClInclude Include="Manager.h" />
@@ -33,19 +40,34 @@
     <ClInclude Include="ObjectList.h" />
     <ClInclude Include="ObjectListIterator.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="Reticle.h" />
+    <ClInclude Include="Saucer.h" />
+    <ClInclude Include="Star.h" />
     <ClInclude Include="Test.h" />
+    <ClInclude Include="TestObject.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="WorldManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Clock.cpp" />
     <ClCompile Include="Event.cpp" />
+    <ClCompile Include="EventCollision.cpp" />
     <ClCompile Include="EventKeyboard.cpp" />
     <ClCompile Include="EventMouse.cpp" />
+    <ClCompile Include="EventNuke.cpp" />
+    <ClCompile Include="EventOut.cpp" />
     <ClCompile Include="EventStep.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="GraphicsManager.cpp" />
+    <ClCompile Include="Hero.cpp" />
     <ClCompile Include="InputManger.cpp" />
     <ClCompile Include="ObjectList.cpp" />
+    <ClCompile Include="Reticle.cpp" />
+    <ClCompile Include="Saucer.cpp" />
+    <ClCompile Include="Star.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="LogManager.cpp" />
@@ -54,6 +76,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectListIterator.cpp" />
     <ClCompile Include="Position.cpp" />
+    <ClCompile Include="TestObject.cpp" />
     <ClCompile Include="Utility.cpp" />
     <ClCompile Include="WorldManager.cpp" />
   </ItemGroup>
@@ -105,7 +128,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\August\Documents\Visual Studio 2013\Projects\SFML-2.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\August\Documents\Visual Studio 2013\Projects\SFML-2.3\include;C:\cccapps\SFML-2.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
