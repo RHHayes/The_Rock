@@ -19,66 +19,68 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bullet.h" />
-    <ClInclude Include="Clock.h" />
-    <ClInclude Include="Event.h" />
-    <ClInclude Include="EventCollision.h" />
-    <ClInclude Include="EventKeyboard.h" />
-    <ClInclude Include="EventMouse.h" />
-    <ClInclude Include="EventNuke.h" />
-    <ClInclude Include="EventOut.h" />
-    <ClInclude Include="EventStep.h" />
-    <ClInclude Include="Explosion.h" />
-    <ClInclude Include="GameManager.h" />
-    <ClInclude Include="GameOver.h" />
-    <ClInclude Include="GraphicsManager.h" />
-    <ClInclude Include="Hero.h" />
-    <ClInclude Include="InputManager.h" />
-    <ClInclude Include="LogManager.h" />
-    <ClInclude Include="Manager.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="ObjectList.h" />
-    <ClInclude Include="ObjectListIterator.h" />
-    <ClInclude Include="Position.h" />
-    <ClInclude Include="Reticle.h" />
-    <ClInclude Include="Saucer.h" />
-    <ClInclude Include="Star.h" />
-    <ClInclude Include="Test.h" />
-    <ClInclude Include="TestObject.h" />
-    <ClInclude Include="Utility.h" />
-    <ClInclude Include="WorldManager.h" />
+    <ClInclude Include="Source\Engine\Header Files\Events\Event.h" />
+    <ClInclude Include="Source\Engine\Header Files\Events\EventCollision.h" />
+    <ClInclude Include="Source\Engine\Header Files\Events\EventKeyboard.h" />
+    <ClInclude Include="Source\Engine\Header Files\Events\EventMouse.h" />
+    <ClInclude Include="Source\Engine\Header Files\Events\EventOut.h" />
+    <ClInclude Include="Source\Engine\Header Files\Events\EventStep.h" />
+    <ClInclude Include="Source\Engine\Header Files\Managers\GameManager.h" />
+    <ClInclude Include="Source\Engine\Header Files\Managers\GraphicsManager.h" />
+    <ClInclude Include="Source\Engine\Header Files\Managers\InputManager.h" />
+    <ClInclude Include="Source\Engine\Header Files\Managers\LogManager.h" />
+    <ClInclude Include="Source\Engine\Header Files\Managers\Manager.h" />
+    <ClInclude Include="Source\Engine\Header Files\Managers\Singleton.h" />
+    <ClInclude Include="Source\Engine\Header Files\Managers\WorldManager.h" />
+    <ClInclude Include="Source\Engine\Header Files\Object\Object.h" />
+    <ClInclude Include="Source\Engine\Header Files\Object\ObjectList.h" />
+    <ClInclude Include="Source\Engine\Header Files\Object\ObjectListIterator.h" />
+    <ClInclude Include="Source\Engine\Header Files\Utility\Clock.h" />
+    <ClInclude Include="Source\Engine\Header Files\Utility\Position.h" />
+    <ClInclude Include="Source\Engine\Header Files\Utility\Utility.h" />
+    <ClInclude Include="Source\Engine\Test\Test Headers\Test.h" />
+    <ClInclude Include="Source\Engine\Test\Test Headers\TestObject.h" />
+    <ClInclude Include="Source\Saucer Shoot\Bullet.h" />
+    <ClInclude Include="Source\Saucer Shoot\EventNuke.h" />
+    <ClInclude Include="Source\Saucer Shoot\Explosion.h" />
+    <ClInclude Include="Source\Saucer Shoot\GameOver.h" />
+    <ClInclude Include="Source\Saucer Shoot\Hero.h" />
+    <ClInclude Include="Source\Saucer Shoot\Reticle.h" />
+    <ClInclude Include="Source\Saucer Shoot\Saucer.h" />
+    <ClInclude Include="Source\Saucer Shoot\Star.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="Clock.cpp" />
-    <ClCompile Include="Event.cpp" />
-    <ClCompile Include="EventCollision.cpp" />
-    <ClCompile Include="EventKeyboard.cpp" />
-    <ClCompile Include="EventMouse.cpp" />
-    <ClCompile Include="EventNuke.cpp" />
-    <ClCompile Include="EventOut.cpp" />
-    <ClCompile Include="EventStep.cpp" />
-    <ClCompile Include="Explosion.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="GameOver.cpp" />
-    <ClCompile Include="GraphicsManager.cpp" />
-    <ClCompile Include="Hero.cpp" />
-    <ClCompile Include="InputManger.cpp" />
-    <ClCompile Include="ObjectList.cpp" />
-    <ClCompile Include="Reticle.cpp" />
-    <ClCompile Include="Saucer.cpp" />
-    <ClCompile Include="Star.cpp" />
-    <ClCompile Include="Test.cpp" />
-    <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="LogManager.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Manager.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="ObjectListIterator.cpp" />
-    <ClCompile Include="Position.cpp" />
-    <ClCompile Include="TestObject.cpp" />
-    <ClCompile Include="Utility.cpp" />
-    <ClCompile Include="WorldManager.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Events\Event.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Events\EventCollision.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Events\EventKeyboard.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Events\EventMouse.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Events\EventOut.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Events\EventStep.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Managers\GameManager.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Managers\GraphicsManager.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Managers\InputManger.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Managers\LogManager.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Managers\Manager.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Managers\WorldManager.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Object\Object.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Object\ObjectList.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Object\ObjectListIterator.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Utility\Position.cpp" />
+    <ClCompile Include="Source\Engine\Source Files\Utility\Utility.cpp" />
+    <ClCompile Include="Source\Engine\Test\Test Source\Main.cpp" />
+    <ClCompile Include="Source\Engine\Test\Test Source\Test.cpp" />
+    <ClCompile Include="Source\Engine\Test\Test Source\TestObject.cpp" />
+    <ClCompile Include="Source\Saucer Shoot\Bullet.cpp" />
+    <ClCompile Include="Source\Saucer Shoot\Clock.cpp" />
+    <ClCompile Include="Source\Saucer Shoot\EventNuke.cpp" />
+    <ClCompile Include="Source\Saucer Shoot\Explosion.cpp" />
+    <ClCompile Include="Source\Saucer Shoot\saucershoot.cpp" />
+    <ClCompile Include="Source\Saucer Shoot\GameOver.cpp" />
+    <ClCompile Include="Source\Saucer Shoot\Hero.cpp" />
+    <ClCompile Include="Source\Saucer Shoot\Reticle.cpp" />
+    <ClCompile Include="Source\Saucer Shoot\Saucer.cpp" />
+    <ClCompile Include="Source\Saucer Shoot\Star.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F7384CBE-77E2-474B-B788-DD587D16272E}</ProjectGuid>
@@ -117,6 +119,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Header Files;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Source Files;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -128,7 +131,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\August\Documents\Visual Studio 2013\Projects\SFML-2.3\include;C:\cccapps\SFML-2.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\August\Documents\Visual Studio 2013\Projects\SFML-2.3\include;C:\cccapps\SFML-2.3\include;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Header Files\Events;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Header Files\Managers;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Header Files\Object;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Header Files\Utility;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Source Files\Events;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Source Files\Managers;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Source Files\Object;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Source Files\Utility;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Test\Test Headers;C:\Users\August\Documents\Visual Studio 2013\Projects\The_Rock\Source\Engine\Test\Test Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

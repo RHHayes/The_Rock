@@ -1,225 +1,245 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
+    <Filter Include="Source">
+      <UniqueIdentifier>{e0979e1f-e57f-4656-a49d-67be9a6853a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine">
+      <UniqueIdentifier>{e86ef5b2-9095-4139-a6d8-1f5a89a7f37b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
+    <Filter Include="Source\Engine\Source Files\Events">
+      <UniqueIdentifier>{082849cd-c5d4-4487-b4c7-4072b9170c75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Source Files\Managers">
+      <UniqueIdentifier>{f744ebcb-cb75-4682-895a-6dd97c32a152}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Source Files\Object">
+      <UniqueIdentifier>{56e14fb8-ccbd-43e8-96e5-5812c91c6d6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Source Files\Utility">
+      <UniqueIdentifier>{5eb271be-a6e3-4866-ad8a-cfc2c98b1d61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\Test">
-      <UniqueIdentifier>{c17cd012-bfdc-4cd5-9824-9a55348d6a88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Events">
-      <UniqueIdentifier>{082849cd-c5d4-4487-b4c7-4072b9170c75}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Events">
+    <Filter Include="Source\Engine\Header Files\Events">
       <UniqueIdentifier>{a0999e86-c129-46ed-acaf-0880f4b7a7a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Mangers">
+    <Filter Include="Source\Engine\Header Files\Mangers">
       <UniqueIdentifier>{a4e66263-1a7f-4d2a-ab24-a54733a10ec0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Managers">
-      <UniqueIdentifier>{f744ebcb-cb75-4682-895a-6dd97c32a152}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Object">
-      <UniqueIdentifier>{56e14fb8-ccbd-43e8-96e5-5812c91c6d6a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Object">
+    <Filter Include="Source\Engine\Header Files\Object">
       <UniqueIdentifier>{bbb5d6d5-6131-4bb2-9cdb-ce442f02127d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Utility">
-      <UniqueIdentifier>{5eb271be-a6e3-4866-ad8a-cfc2c98b1d61}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Utility">
+    <Filter Include="Source\Engine\Header Files\Utility">
       <UniqueIdentifier>{ec34be40-6cb2-4dfb-906f-fe4c60cc2520}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Saucer_Shoot">
-      <UniqueIdentifier>{c7ef2e02-85e7-4def-8bcf-39601946d9e7}</UniqueIdentifier>
+    <Filter Include="Source\Engine\Test">
+      <UniqueIdentifier>{17bc39f9-1633-4a5c-a2ae-1da68031ea30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Test\Test Source">
+      <UniqueIdentifier>{e47bea11-de90-4899-84ba-18e754882e66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine\Test\Test Headers">
+      <UniqueIdentifier>{510a1b28-819d-4a36-9585-697189e57e8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Saucer Shoot">
+      <UniqueIdentifier>{f9bb0bff-fe59-4d0d-9f06-80e679272804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Rock Lives">
+      <UniqueIdentifier>{b28d31a8-45f2-49d2-89fb-a7f418e6ab79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Rock Lives\Header Files">
+      <UniqueIdentifier>{7f5599a0-4135-4396-bfd1-1660fa97c86a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Test.h">
-      <Filter>Source Files\Test</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Events\Event.h">
+      <Filter>Source\Engine\Header Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="Event.h">
-      <Filter>Header Files\Events</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Events\EventCollision.h">
+      <Filter>Source\Engine\Header Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="EventStep.h">
-      <Filter>Header Files\Events</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Events\EventKeyboard.h">
+      <Filter>Source\Engine\Header Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files\Mangers</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Events\EventMouse.h">
+      <Filter>Source\Engine\Header Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="LogManager.h">
-      <Filter>Header Files\Mangers</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Events\EventOut.h">
+      <Filter>Source\Engine\Header Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="Manager.h">
-      <Filter>Header Files\Mangers</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Events\EventStep.h">
+      <Filter>Source\Engine\Header Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="WorldManager.h">
-      <Filter>Header Files\Mangers</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Managers\GameManager.h">
+      <Filter>Source\Engine\Header Files\Mangers</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Header Files\Object</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Managers\GraphicsManager.h">
+      <Filter>Source\Engine\Header Files\Mangers</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectList.h">
-      <Filter>Header Files\Object</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Managers\InputManager.h">
+      <Filter>Source\Engine\Header Files\Mangers</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectListIterator.h">
-      <Filter>Header Files\Object</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Managers\LogManager.h">
+      <Filter>Source\Engine\Header Files\Mangers</Filter>
     </ClInclude>
-    <ClInclude Include="Position.h">
-      <Filter>Header Files\Utility</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Managers\Manager.h">
+      <Filter>Source\Engine\Header Files\Mangers</Filter>
     </ClInclude>
-    <ClInclude Include="Clock.h">
-      <Filter>Header Files\Utility</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Managers\Singleton.h">
+      <Filter>Source\Engine\Header Files\Mangers</Filter>
     </ClInclude>
-    <ClInclude Include="Utility.h">
-      <Filter>Header Files\Utility</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Managers\WorldManager.h">
+      <Filter>Source\Engine\Header Files\Mangers</Filter>
     </ClInclude>
-    <ClInclude Include="GraphicsManager.h">
-      <Filter>Header Files\Mangers</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Object\Object.h">
+      <Filter>Source\Engine\Header Files\Object</Filter>
     </ClInclude>
-    <ClInclude Include="InputManager.h">
-      <Filter>Header Files\Mangers</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Object\ObjectList.h">
+      <Filter>Source\Engine\Header Files\Object</Filter>
     </ClInclude>
-    <ClInclude Include="EventKeyboard.h">
-      <Filter>Header Files\Events</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Object\ObjectListIterator.h">
+      <Filter>Source\Engine\Header Files\Object</Filter>
     </ClInclude>
-    <ClInclude Include="EventMouse.h">
-      <Filter>Header Files\Events</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Utility\Clock.h">
+      <Filter>Source\Engine\Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="EventCollision.h">
-      <Filter>Header Files\Events</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Utility\Position.h">
+      <Filter>Source\Engine\Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="EventOut.h">
-      <Filter>Header Files\Events</Filter>
+    <ClInclude Include="Source\Engine\Header Files\Utility\Utility.h">
+      <Filter>Source\Engine\Header Files\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="TestObject.h">
-      <Filter>Source Files\Test</Filter>
+    <ClInclude Include="Source\Engine\Test\Test Headers\Test.h">
+      <Filter>Source\Engine\Test\Test Headers</Filter>
     </ClInclude>
-    <ClInclude Include="EventNuke.h">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClInclude Include="Source\Engine\Test\Test Headers\TestObject.h">
+      <Filter>Source\Engine\Test\Test Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Explosion.h">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClInclude Include="Source\Saucer Shoot\Bullet.h">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClInclude>
-    <ClInclude Include="GameOver.h">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClInclude Include="Source\Saucer Shoot\EventNuke.h">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClInclude>
-    <ClInclude Include="Hero.h">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClInclude Include="Source\Saucer Shoot\Explosion.h">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClInclude>
-    <ClInclude Include="Reticle.h">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClInclude Include="Source\Saucer Shoot\GameOver.h">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClInclude>
-    <ClInclude Include="Saucer.h">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClInclude Include="Source\Saucer Shoot\Hero.h">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClInclude>
-    <ClInclude Include="Star.h">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClInclude Include="Source\Saucer Shoot\Reticle.h">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClInclude Include="Source\Saucer Shoot\Saucer.h">
+      <Filter>Source\Saucer Shoot</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Saucer Shoot\Star.h">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Test.cpp">
-      <Filter>Source Files\Test</Filter>
+    <ClCompile Include="Source\Engine\Test\Test Source\Main.cpp">
+      <Filter>Source\Engine\Test\Test Source</Filter>
     </ClCompile>
-    <ClCompile Include="Event.cpp">
-      <Filter>Source Files\Events</Filter>
+    <ClCompile Include="Source\Engine\Test\Test Source\Test.cpp">
+      <Filter>Source\Engine\Test\Test Source</Filter>
     </ClCompile>
-    <ClCompile Include="EventStep.cpp">
-      <Filter>Source Files\Events</Filter>
+    <ClCompile Include="Source\Engine\Test\Test Source\TestObject.cpp">
+      <Filter>Source\Engine\Test\Test Source</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Source Files\Managers</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Events\Event.cpp">
+      <Filter>Source\Engine\Source Files\Events</Filter>
     </ClCompile>
-    <ClCompile Include="LogManager.cpp">
-      <Filter>Source Files\Managers</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Events\EventCollision.cpp">
+      <Filter>Source\Engine\Source Files\Events</Filter>
     </ClCompile>
-    <ClCompile Include="Manager.cpp">
-      <Filter>Source Files\Managers</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Events\EventKeyboard.cpp">
+      <Filter>Source\Engine\Source Files\Events</Filter>
     </ClCompile>
-    <ClCompile Include="WorldManager.cpp">
-      <Filter>Source Files\Managers</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Events\EventMouse.cpp">
+      <Filter>Source\Engine\Source Files\Events</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files\Test</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Events\EventOut.cpp">
+      <Filter>Source\Engine\Source Files\Events</Filter>
     </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>Source Files\Object</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Events\EventStep.cpp">
+      <Filter>Source\Engine\Source Files\Events</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectList.cpp">
-      <Filter>Source Files\Object</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Managers\GameManager.cpp">
+      <Filter>Source\Engine\Source Files\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectListIterator.cpp">
-      <Filter>Source Files\Object</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Managers\GraphicsManager.cpp">
+      <Filter>Source\Engine\Source Files\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="Clock.cpp">
-      <Filter>Source Files\Utility</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Managers\InputManger.cpp">
+      <Filter>Source\Engine\Source Files\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="Position.cpp">
-      <Filter>Source Files\Utility</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Managers\LogManager.cpp">
+      <Filter>Source\Engine\Source Files\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="Utility.cpp">
-      <Filter>Source Files\Utility</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Managers\Manager.cpp">
+      <Filter>Source\Engine\Source Files\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="GraphicsManager.cpp">
-      <Filter>Source Files\Managers</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Managers\WorldManager.cpp">
+      <Filter>Source\Engine\Source Files\Managers</Filter>
     </ClCompile>
-    <ClCompile Include="InputManger.cpp">
-      <Filter>Source Files\Managers</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Object\Object.cpp">
+      <Filter>Source\Engine\Source Files\Object</Filter>
     </ClCompile>
-    <ClCompile Include="EventKeyboard.cpp">
-      <Filter>Source Files\Events</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Object\ObjectList.cpp">
+      <Filter>Source\Engine\Source Files\Object</Filter>
     </ClCompile>
-    <ClCompile Include="EventMouse.cpp">
-      <Filter>Source Files\Events</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Object\ObjectListIterator.cpp">
+      <Filter>Source\Engine\Source Files\Object</Filter>
     </ClCompile>
-    <ClCompile Include="EventCollision.cpp">
-      <Filter>Source Files\Events</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Utility\Position.cpp">
+      <Filter>Source\Engine\Source Files\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="EventOut.cpp">
-      <Filter>Source Files\Events</Filter>
+    <ClCompile Include="Source\Engine\Source Files\Utility\Utility.cpp">
+      <Filter>Source\Engine\Source Files\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="TestObject.cpp">
-      <Filter>Source Files\Test</Filter>
+    <ClCompile Include="Source\Saucer Shoot\Bullet.cpp">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClCompile Include="Source\Saucer Shoot\Clock.cpp">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClCompile>
-    <ClCompile Include="EventNuke.cpp">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClCompile Include="Source\Saucer Shoot\EventNuke.cpp">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClCompile>
-    <ClCompile Include="Explosion.cpp">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClCompile Include="Source\Saucer Shoot\Explosion.cpp">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClCompile>
-    <ClCompile Include="game.cpp">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClCompile Include="Source\Saucer Shoot\GameOver.cpp">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClCompile>
-    <ClCompile Include="GameOver.cpp">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClCompile Include="Source\Saucer Shoot\Hero.cpp">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClCompile>
-    <ClCompile Include="Hero.cpp">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClCompile Include="Source\Saucer Shoot\Reticle.cpp">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClCompile>
-    <ClCompile Include="Reticle.cpp">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClCompile Include="Source\Saucer Shoot\Saucer.cpp">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClCompile>
-    <ClCompile Include="Saucer.cpp">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClCompile Include="Source\Saucer Shoot\Star.cpp">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClCompile>
-    <ClCompile Include="Star.cpp">
-      <Filter>Source Files\Saucer_Shoot</Filter>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source\Rock Lives\Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Saucer Shoot\saucershoot.cpp">
+      <Filter>Source\Saucer Shoot</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
